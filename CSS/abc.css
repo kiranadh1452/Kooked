@@ -1,0 +1,255 @@
+@font-face{
+  font-family: myFont;
+  src: url("../Charmonman-Regular.ttf");
+
+}
+body{
+  margin:0;
+  color : white;
+  background-image:url("../Pictures/red.png");
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-color: red;
+  margin: 5px 5px ;
+}
+.admin_home_page{
+  background-image:url("../Pictures/pink_dark.png");
+  background-color: pink;
+}
+.sec2{ /*body of employee login page */
+  background-image:url("../Pictures/orange.png");
+  background-color: orange;
+  text-align: center;
+}
+.emp_log{
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+.main1{  /* body of customer login page */
+  text-align: center;
+}
+button {
+  background-color: red;
+  color: white;
+  padding: 7px 10px;
+  margin: 8px 0;
+  border: solid 1.5px red;
+  cursor: pointer;
+  width: 24%;
+  border-radius : 8px;
+}
+button:hover{
+  padding-right: 25px;
+  background-color: white;
+  color: black;
+  border: solid 1.5px red;
+}
+button:active {
+  background-color: red;
+  color : white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.btn5{
+  background-color: orange;
+  border: solid 1.5px orange;
+  width: 14%;
+}
+.btn5:hover{
+  color: green;
+  border: solid 1.5px orange;
+}
+.btn5:active{
+  background-color: #df4a00;
+  color: white;
+}
+.btn1{ /* Simple login button from main page */
+  width: 14%;
+  margin-left: 10%;
+}
+#btn2{ /* Employee login button from main page */
+  width: 27%;
+}
+.btn3{ /* new user button */
+  width: 18%; margin-left: 5%;
+}
+.btn4{ /* Admin panel button */
+  width: 14%;
+  margin-left: 3em;
+}
+.admin_page_buttons{ /* includes button 4 also */
+  background-color: #ff1494;
+  border: solid white 2px;
+  margin-left: 0;
+}
+input[type=text], input[type=password], input[type=email], input[type=tel] , input[type=number] {
+  width: 30%;
+  padding: 9px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.adm{
+  text-align: left;
+}
+.loginf{   /* costumer login */
+    background-image:url("../Pictures/white.png"); color:black;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 3%;
+}
+.login_emp{ /*employee login */
+  margin-left: 30%;
+  margin-right: 30%;
+}
+h1{
+  font-size: 50px;
+  font-family: myFont;
+  margin: 0;
+  margin-top: 3%;
+  padding: 0 ;
+}
+.text_n{  /* for the title */
+  font-size: 15px;
+  text-align:center;
+  margin-top: 0%;
+  margin-bottom: 2%;
+}
+.info{  /* for any specific information */
+  color:purple;
+}
+.avatar1, .img_employee , .img_customer{ /* image in the create account section */
+  width: 5% ;
+  border-radius: 50%;
+  margin-bottom: 5%;
+}
+.avatar2, .img_employee{
+  width: 13%;
+  border: solid 5px red;
+}
+.img_employee{
+  margin-left: 35%;
+  width: 20%;
+  border: solid 5px purple;
+}
+.img_customer{
+  width: 20%;
+  border: solid 5px grey;
+}
+.user_icon{ /*class containing the userlogo and cross sign */
+  text-align: centered;
+  position: relative;
+}
+.popup_create_user{  /*block section that appears after clicking on New User */
+  display: none; /* Hidden by default */
+  color: black;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: red;/*rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4);  /* Black w/ opacity */
+  padding-top: 60px;
+}
+.popup_admin_login{
+  color: red;
+  position: fixed; /* Stay in place */
+  z-index: 1;
+}
+.usr_creation , .admin_login { /* form of creating user */
+  background-image:url("../Pictures/white.png");
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.admin_login{
+  width: 60%;
+}
+.close {  /*cross sign appearing to close */
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  border: solid grey 1.5px ;
+}
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+.general {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #db1915;
+  position: fixed;
+  top: 0;
+  width: 40%;
+  height: 6%;
+}
+.no_logged2{
+  background-color: #ec5700;
+}
+.admin_menu{
+  background-color: #ff1494;
+}
+li {
+  float: left;
+  font-weight: 900;
+  margin-top: 0%;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.general_active_menu_opt{
+  background-image: repeating-radial-gradient(#601bca,#17c4af); /*  linear-gradient(orange,red); */
+}
+.active_adm{
+  background-image: repeating-radial-gradient(#601bca,#17c4af); /*  linear-gradient(orange,red); */
+}
+#add_emp, #remove_emp, #remove_usr, #change_admin_pwd , #change_admin_email{
+  display: none;
+  color: black;
+  /* background-image: url("../Pictures/white.png"); */ background-color: white;
+  border: solid 2px black;
+  text-align: center;
+  margin-right: 23%;
+  margin-left: 25%;
+  width:50%;
+}
