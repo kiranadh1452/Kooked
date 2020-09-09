@@ -1,7 +1,5 @@
 <?php
 // Initialize the session
-
-session_id("session1");
 session_start();
  
 // Unset all of the session variables
