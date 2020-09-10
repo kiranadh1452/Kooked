@@ -6,7 +6,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
 }
 $_SESSION["loggedin"] = false;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-     if(($_POST['a_email'] == 'kiranadh1452@gmail.com') && ($_POST['a_pwd'] == 'password') ){
+     if(($_POST['a_email'] == 'kiranadh1452@gmail.com') && ($_POST['a_pwd'] == 'password12') ){
 	$_SESSION["loggedin"] = true;
         header("location: 3_admin_home.php");
      }
