@@ -1,10 +1,17 @@
 <?php
-session_id("session1");
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+if(!isset($_SESSION["adm_loggedin"]) || $_SESSION["adm_loggedin"] !== true){
     header("location: 1_main.php");
+    exit;
+}
+if(isset($_SESSION["emp_loggedin"]) && $_SESSION["emp_loggedin"] == true){
+    header("location: 5_employee_home.php");
+    exit;
+}
+if(isset($_SESSION["c_loggedin"]) && $_SESSION["c_loggedin"] == true){
+    header("location: 6_customer_home.php");
     exit;
 }
 ?>
