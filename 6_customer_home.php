@@ -11,10 +11,10 @@ if(!isset($_SESSION["c_loggedin"]) || $_SESSION["c_loggedin"] != true){
   <link rel="stylesheet" type="text/css" href="CSS/abc.css" >
 </head>
 
-<body class="employee_page">
+<body class="customer_page">
   <div class="topp" style=" text-align: center;" > <h1><u><b> Kooked</b></u> </h1><span class="text_n" style:"position: fixed;" >"Eat while it's hot"</span>
   </div>
-  <ul class="general admin_menu" >
+  <ul class="general " >
     <li><a href="6_customer_home.php" class="general_active_menu_opt active_adm">Customer Home</a></li>
     <li><a href="#settings">Settings</a></li>
     <li style="float: right ;"><a href="logout.php">Log out</a></li>

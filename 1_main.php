@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $c_email = trim($_POST['c_email']);
     $c_pwd = trim($_POST['c_pwd']);
-    $sql1 = "SELECT c_id, c_name, c_email, c_pwd, c_phn FROM customer WHERE c_email = '$c_email' " ;
+    $sql1 = "SELECT c_id, c_name, c_email, c_pwd, c_phn FROM customer WHERE c_email = '$c_email' AND c_act = 1" ;
     $result = $conn->query($sql1) ;
 
     if($result){

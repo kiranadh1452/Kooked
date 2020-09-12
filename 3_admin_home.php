@@ -8,11 +8,13 @@ if(!isset($_SESSION["adm_loggedin"]) || $_SESSION["adm_loggedin"] !== true){
 }
 
 require_once "config_main.php";
-$e_id = 0;
-$e_name = $e_email = $e_pwd = $e_phn = "";
+$e_id = $c_id = 0;
+$e_name = $e_email = $e_pwd = $e_phn = $c_email ="";
 $e_error = "";
 $e_success = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+if(isset($_POST['emp_add'])){
   $e_id = trim($_POST["eid"]);
   $e_name = trim($_POST["e_name"]);
   $e_email = trim($_POST["e_email"]);
@@ -46,9 +48,42 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($stmt->execute()){
       $e_success .= "<h3> Done! Employee has been added.<br> </h3>";
     }
+    else{
+      // mistake in query
+    }
     $stmt->close();
   }
+}
 
+elseif(isset($_POST['emp_rmv'])){
+
+  $e_id = trim($_POST["eid"]);
+  $e_email = trim($_POST["e_email"]);
+
+  $sql = "DELETE FROM employee WHERE emp_email = '$e_email' AND emp_id = $e_id " ;
+  $result = $conn->query($sql);
+  if($result){
+    $e_success .= "<h3> Done! Employee has been removed.<br> </h3>";
+  }
+  else{
+    $e_error .= "<h3>Couldn't perform the action. Please check details again.<br> </h3>";
+  }
+}
+
+elseif(isset($_POST['usr_rmv'])){
+
+  $c_id = trim($_POST["cid"]);
+  $c_email = trim($_POST["c_email"]);
+
+  $sql = "UPDATE customer SET c_act=0, last_modified=CURRENT_TIMESTAMP WHERE c_email = '$c_email' AND c_id = $c_id AND c_act =1 " ;
+  $result = $conn->query($sql);
+  if($result){
+    $e_success .= "<h3> Done! Customer has been removed.<br> </h3>";
+  }
+  else{
+    $e_error .= "<h3>Couldn't perform the action. Please check details again.<br> </h3>";
+  }
+}
 
 }
 $conn->close();
@@ -70,9 +105,14 @@ $conn->close();
   <button onclick="myFunction2()" class="btn4 admin_page_buttons" id="remove_emp_btn">Remove Employee</button>
   <button onclick="myFunction3()" class="btn4 admin_page_buttons" id="remove_usr_btn ">Remove User</button>
 </div><br><br>
+
 <div style="text-align: center;  color:red; background-color: grey;">
-   <?php echo $e_error ; ?> <?php echo $e_success ; ?>
+   <?php echo $e_error ; ?>
  </div> <br>
+ <div style="text-align: center;  color:green; background-color: grey;">
+    <?php echo $e_success ; ?>
+  </div> <br>
+
 <div  style="margin-left: 3%;">
   <form id="add_emp" action= "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
     <span onclick="myFunction()" class="close" title="Close Modal" style="position: relative; float:right;">&times;</span>
@@ -96,36 +136,36 @@ $conn->close();
     <label for="eid"><b>Employee Id<b></label><br>
         <input type="number" placeholder="Staff Id" name="eid" required><br>
 
-    <button type="submit" class="btn4 admin_page_buttons">Add</button><br><br>
+    <button type="submit" name="emp_add" class="btn4 admin_page_buttons">Add</button><br><br>
   </form>
 </div>
 <div style="margin-left: 3%;">
-  <form id="remove_emp">
+  <form id="remove_emp" action= "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
     <span onclick="myFunction2()" class="close" title="Close Modal" style="position: relative; float:right;">&times;</span>
     <h2>Remove an employee</h2><br>
 
-    <label for="e_name"><b>Employee Name:</b></label> <br>
-      <input type="text" placeholder="Employee Name" name="e_name" required><br>
+    <label for="e_email"><b>Employee Email Id:</b></label> <br>
+      <input type="text" placeholder="Employee Email" name="e_email" required><br>
 
     <label for="eid"><b>Employee Id<b></label><br>
         <input type="number" placeholder="Staff Id" name="eid" required><br>
 
-    <button type="submit" class="btn4 admin_page_buttons">Remove</button><br><br>
+    <button type="submit" name="emp_rmv" class="btn4 admin_page_buttons">Remove</button><br><br>
   </form>
 </div>
 
 <div style="margin-left: 3%;">
-  <form id="remove_usr">
+  <form id="remove_usr" action= "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
     <span onclick="myFunction3()" class="close" title="Close Modal" style="position: relative; float:right;">&times;</span>
     <h2>Remove a user</h2><br>
 
-    <label for="c_name"><b>User Name:</b></label> <br>
-      <input type="text" placeholder="Customer Name" name="c_name" required><br>
+    <label for="c_email"><b>Customer Email Id:</b></label> <br>
+      <input type="text" placeholder="Customer Email Id" name="c_email" required><br>
 
     <label for="cid"><b>Customer Id<b></label><br>
         <input type="number" placeholder="User Id" name="cid" required><br>
 
-    <button type="submit" class="btn4 admin_page_buttons">Remove</button><br><br>
+    <button type="submit" name="usr_rmv" class="btn4 admin_page_buttons">Remove</button><br><br>
   </form>
 </div>
 

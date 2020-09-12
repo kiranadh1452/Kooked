@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "<script> alert(\"Incorrect Admin Details.\"); </script> ";
          }
       }
-      else{
+      elseif($res >1 ){
          echo "<script> alert(\"Multiple admin found. Please contact service provider.\"); </script> ";
       }
     }
