@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          }
       }
       elseif($res >1 ){
-         echo "<script> alert(\"Multiple admin found. Please contact service provider.\"); </script> ";
+         echo "<script> alert(\"Multiple admin found. Please wait for a while or contact service provider.\"); </script> ";
       }
     }
     else{
