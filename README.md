@@ -6,14 +6,13 @@ Raw HTML, JS, PHP. <br>
 Database : MySQL <br>
 Developed By : Kiran Adhikari <br><br> <hr>
 
-<h3> Setup </h3><hr>
+<h3> Setup </h3>
 All you need is : <br>
 - A server to run php <br>
 - MySQL database <br><br>
 
 For database purpose, run the .sql files inside "Database Creation and Designing". <br>
-Open up "1_main.php". (It doesnot matter as you'll be redirected to this page anyway unless you are logged in.)
-<br><br>
+Open up "1_main.php". (It doesnot matter as you'll be redirected to this page anyway unless you are logged in.) <hr>
 
 Customer Home Page - User Login | User Sign Up
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/1%20Customer.png?token=ALTQMAKIM655Z56RGKNBFVDAPP4ZQ)
