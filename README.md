@@ -37,7 +37,7 @@ Admin Panel
   <li>Confirmed (Orders that were confirmed but yet to be delivered.) </li>
   <li> Completed (Display orders that were successfully delivered. ) </li>
   <li> Products (Display and alter the products : Add , Edit or Delete) </li> 
-</ul>
+</ul> <br>
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/8%20employee.png?token=ALTQMAJ5IXJ4647RXPJ76NLAPP7HA)
 <br><br><br><br>
   
