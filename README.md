@@ -45,8 +45,20 @@ Admin Panel
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/9%20Employee.png?token=ALTQMAPKWT4NRIL6XAYUPZDAPP7HG)
 <br><br>
 <b>Employee : Products Page View </b> <br>
-![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/7%20Employee.png)
+![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/7%20Employee.png?token=ALTQMANRAGVX4MSCUK52HRTAPP7G2)
 <br><br><br><br>
-Admin Section: You can change the default email id and password here. Note that Admin is the highest authority in this whole system.<br>
 
+Admin Section: You can change the default email id and password here. Note that Admin is the highest authority in this whole system.<br>
+Admin : Home(Add / Remove an employee)
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/99%20Admin%201.png)
+<br> <br>
+
+Admin : Users(View Employees , Customers. You can bann specific customers.)
+![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/99%20Admin%202.png)
+<br><br>
+
+Admin : Banned Accounts(View Customers whom you have banned due to their certain history. You can uplift the bann here.)
+![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/99%20Admin%203.png)
+
+
+Thank you!
