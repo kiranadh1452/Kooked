@@ -32,7 +32,14 @@ Admin Panel
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/6%201%20Orders%20History.png?token=ALTQMAKJCDYDC6JFGFNFKMTAPP7XA)
 <br><br><br><br>
 <b> Employee Home Page :</b> <br>
-////////////////////////////////////////<br>
+<p>
+<ul> 
+  <li> Home (Display orders that were created but yet to be confirmed.) 
+  <li>Confirmed (Orders that were confirmed but yet to be delivered.) </li>
+  <li> Completed (Display orders that were successfully delivered. ) </li>
+  <li> Products (Display and alter the products : Add , Edit or Delete) </li> 
+</ul>
+<br></p>
 
 <b>Employee : Home Page View </b> <br>
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/8%20employee.png?token=ALTQMAJ5IXJ4647RXPJ76NLAPP7HA)</li>
