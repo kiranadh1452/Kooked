@@ -27,4 +27,17 @@ Admin Panel
 
 <b> Customer Home Page </b> <br> Home | MyOrders(Order History) | Edit Profile | Log Out <br>
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/5%20User%20Home.png?token=ALTQMAKKQSVGHCDSV73ZUNTAPP6HC)
+<br><br>
+<b> MyOrders : </b> Manage your old orders - Confirm the orders which you received successfully. <br>
+![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/6%20Order%20History.png?token=ALTQMANKDMHD2QG4D4OTBUDAPP6HI)
 <br><br><br><br>
+<b> Employee Home Page :</b> <br>
+<ul> 
+  <li> Home (Display orders that were created but yet to be confirmed.)</li> 
+  <li>Confirmed (Orders that were confirmed but yet to be delivered.) </li>
+  <li> Completed (Display orders that were successfully delivered. ) </li>
+  <li> Products (Display and alter the products : Add , Edit or Delete) </li> 
+</ul>
+![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/8%20employee.png?token=ALTQMAJ5IXJ4647RXPJ76NLAPP7HA)
+<br><br><br><br>
+  
