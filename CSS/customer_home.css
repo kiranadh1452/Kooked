@@ -1,0 +1,41 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  color: black;
+  font-size: 120%;
+}
+#t01{
+  color: orange;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 1% 15%;
+  color: black;
+}
+th{
+  text-align: center;
+  color: black;
+}
+.th3{
+  width: 20%;
+  font-size: 70%;
+  color:red;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+tr:nth-child(odd) {
+  background-color: grey;
+}
+.btns_in_cart{
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 0.2em;
+}
+#my{
+  font-size: 120%;
+}

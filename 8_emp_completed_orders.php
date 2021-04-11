@@ -1,13 +1,12 @@
 <?php
 session_start();
-header("Refresh: 60");
 require_once "config_main.php";
 if(!isset($_SESSION["emp_loggedin"]) || $_SESSION["emp_loggedin"] != true){
     header("location: 1_main.php");
     exit;
 }
 $emp_id = $_SESSION["emp_loggedin_id"];
-$sql1 = "SELECT o_id, o_value, total, c_id, date_of_order, confirmed, delivered FROM order_table WHERE confirmed=0 ORDER BY date_of_order ASC" ;
+$sql1 = "SELECT o_id, o_value, total, c_id, date_of_order, confirmed, delivered FROM order_table WHERE confirmed=1 AND delivered=0 ORDER BY date_of_order ASC" ;
 
 $result = $conn->query($sql1) ;
 $food=array();
@@ -17,23 +16,6 @@ while($row = $result -> fetch_assoc()){
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-  if(isset($_POST['my_btn'])){
-    $o_id = (int)trim($_POST['my_btn']);
-
-    $sql = "UPDATE order_table SET confirmed=1 WHERE o_id = '$o_id' ";
-    $result = $conn->query($sql) ;
-    if($result){
-      echo "<script> console.log(\"Successfully Confirmed Order.?>\");</script> ";
-      header("location: 5_employee_home.php");
-
-    }
-    else{
-      echo "<script> alert(\"Couldn't confirm the order now.\") </script> ";
-    }
-    $sql->close();
-
-  }
-
   if(isset($_POST['my_btn1'])){
     $o_id = (int)trim($_POST['my_btn1']);
 
@@ -41,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $result = $conn->query($sql) ;
     if($result){
       echo "<script> console.log(\"Successfully Confirmed Order.?>\");</script> ";
-      header("location: 5_employee_home.php");
+      header("location: 8_emp_completed_orders.php");
 
     }
     else{
@@ -65,8 +47,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <div class="topp" style=" text-align: center;" > <h1><u><b> Kooked</b></u> </h1><span class="text_n" style:"position: fixed;" >"Eat while it's hot"</span>
   </div> <hr>
   <ul class="general no_logged2" >
-    <li><a href="5_employee_home.php" class="general_active_menu_opt active_adm">Employee Home</a></li>
-    <li><a href="8_emp_completed_orders.php">Confirmed</a></li>
+    <li><a href="5_employee_home.php" >Employee Home</a></li>
+    <li><a href="8_emp_completed_orders.php" class="general_active_menu_opt active_adm">Confirmed</a></li>
     <li><a href="9_emp_delivered_orders.php">Completed</a></li>
     <li><a href="10_emp_product_manage.php">Products</a></li>
     <li style="float: right ;"><a href="logout.php">Log out</a></li>
@@ -74,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <h2> <?php echo " Welcome to \"KOOKED\" ".$_SESSION["emp_loggedin_name"]." (".$_SESSION["emp_loggedin_id"].")"; ?> </h2>
 
 <div class="card" style="margin-left: 1%; margin-right: 1%;">
-  <hr><h3 style="color:black;"> These orders are yet to be confirmed. </h3> <hr>
+  <hr><h3 style="color:black;">These orders are confirmed but not completed.</h3> <hr>
     <table class="table">
     <tr>
       <th><h2>Id</h2></th>
@@ -82,7 +64,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <th><h2>Date</h2></th>
       <th><h2>Status</h2></th>
       <th><h2>Details</h2></th>
-      <th><h2>Confirm</h2></th>
       <th><h2>Delete</h2></th>
     </tr>
     <?php for ($i = 0; $i < count($food); $i++) { ?>
@@ -93,10 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      <td> <?php if($confirm == 1){echo "Confirmed ";} else{echo "Not Confirmed";} ?> </td>
      <td> <button style="width: 50%;" onclick="document.getElementById('details<?php echo $i; ?>').style.display='block'">Details </button></td>
      <td><form action= "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-        <button style="width: 50%;" value="<?php echo $ord ;?>" name="my_btn">Confirm</button>
-      </form></td>
-     <td><form action= "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-         <button style="width: 50%;" value="<?php echo $ord ;?>" name="my_btn1">Delete</button>
+         <button style="width: 50%;" value="<?php echo $ord ;?>" name="my_btn1">Cancel Order</button>
        </form></td>
    </tr>
     <?php } ?>

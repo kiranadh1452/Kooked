@@ -78,7 +78,7 @@ elseif(isset($_POST['usr_rmv'])){
   $sql = "UPDATE customer SET c_act=0, last_modified=CURRENT_TIMESTAMP WHERE c_email = '$c_email' AND c_id = $c_id AND c_act =1 " ;
   $result = $conn->query($sql);
   if($result){
-    $e_success .= "<h3> Done! Customer has been removed.<br> </h3>";
+    $e_success .= "<h3> Done! Customer has been banned.<br> </h3>";
   }
   else{
     $e_error .= "<h3>Couldn't perform the action. Please check details again.<br> </h3>";
@@ -90,7 +90,11 @@ $conn->close();
 
 ?>
 <html>
- <head> <title> Kooked - Admin Home </title> <link rel="stylesheet" type="text/css" href="CSS/abc.css" >  </head>
+ <head> <title> Kooked - Admin Home </title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="CSS/customer_home.css">
+   <link rel="stylesheet" type="text/css" href="CSS/abc.css">
+ </head>
 
 <body class="admin_home_page">
   <div class="topp" style=" text-align: center;" > <h1><u><b> Kooked</b></u> </h1><span class="text_n" style:"position: fixed;" >"Eat while it's hot"</span>
@@ -98,12 +102,15 @@ $conn->close();
 <ul class="general admin_menu" >
   <li><a href="3_admin_home.php" class="general_active_menu_opt active_adm">Admin Home</a></li>
   <li><a href="4_admin_settings.php">Admin Settings</a></li>
+  <li><a href="4_admin_orders.php">Orders</a></li>
+  <li><a href="4_admin_user.php">Users</a></li>
+  <li><a href="4_admin_banned.php">Banned Acc</a></li>
   <li style="float: right ;"><a href="logout.php">Log out</a></li>
 </ul>
 <div style="margin-left:3%;">
   <button onclick="myFunction()" class="btn4 admin_page_buttons" id="add_emp_btn">Add Employee</button>
   <button onclick="myFunction2()" class="btn4 admin_page_buttons" id="remove_emp_btn">Remove Employee</button>
-  <button onclick="myFunction3()" class="btn4 admin_page_buttons" id="remove_usr_btn ">Remove User</button>
+  <button onclick="myFunction3()" class="btn4 admin_page_buttons" id="remove_usr_btn ">Bann User</button>
 </div><br><br>
 
 <div style="text-align: center;  color:red; background-color: grey;">
@@ -157,7 +164,7 @@ $conn->close();
 <div style="margin-left: 3%;">
   <form id="remove_usr" action= "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" >
     <span onclick="myFunction3()" class="close" title="Close Modal" style="position: relative; float:right;">&times;</span>
-    <h2>Remove a user</h2><br>
+    <h2>Bann a user</h2><br>
 
     <label for="c_email"><b>Customer Email Id:</b></label> <br>
       <input type="text" placeholder="Customer Email Id" name="c_email" required><br>

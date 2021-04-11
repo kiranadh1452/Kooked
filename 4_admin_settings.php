@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "pw-change.php";
+require "pw-change.php";
 
 $_SESSION['success']= '' ;
 $new = $cur = $confirm = '';
@@ -34,7 +34,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 <html>
- <head> <title> Kooked - Admin Home </title> <link rel="stylesheet" type="text/css" href="CSS/abc.css" >  </head>
+ <head> <title> Kooked - Admin Home </title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="CSS/customer_home.css">
+   <link rel="stylesheet" type="text/css" href="CSS/abc.css">
+ </head>
 
 <body class="admin_home_page">
   <div class="topp" style=" text-align: center;" > <h1><u><b> Kooked</b></u> </h1><span class="text_n" style:"position: fixed;" >"Eat while it's hot"</span>
@@ -42,6 +46,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <ul class="general admin_menu" >
   <li><a href="3_admin_home.php">Admin Home</a></li>
   <li><a href="4_admin_settings.php" class="general_active_menu_opt active_adm">Admin Settings</a></li>
+  <li><a href="4_admin_orders.php">Orders</a></li>
+  <li><a href="4_admin_user.php">Users</a></li>
+  <li><a href="4_admin_banned.php">Banned Acc</a></li>
   <li style="float: right ;"><a href="logout.php">Log out</a></li>
 </ul>
 
@@ -54,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
    <?php if(!empty($_SESSION['success'] )){echo $_SESSION['success'] ; echo "<br>";}?> </div>
 
 <div style="margin-left: 3%;">
-  <form id="change_admin_email" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+  <form id="change_admin_email" action="4_admin_settings.php" method="POST">
     <span onclick="myFunction()" class="close" title="Close Modal" style="position: relative; float:right;">&times;</span>
     <h2>Change Admin Email Address</h2><br>
 
@@ -69,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </div>
 
 <div style="margin-left: 3%;">
-  <form id="change_admin_pwd" action=action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+  <form id="change_admin_pwd" action="4_admin_settings.php" method="post">
     <span onclick="myFunction1()" class="close" title="Close Modal" style="position: relative; float:right;">&times;</span>
     <h2>Change Admin Password</h2><br>
 

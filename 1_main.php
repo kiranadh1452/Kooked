@@ -30,27 +30,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $c_email = trim($_POST['c_email']);
     $c_pwd = trim($_POST['c_pwd']);
-    $sql1 = "SELECT c_id, c_name, c_email, c_pwd, c_phn FROM customer WHERE c_email = '$c_email' AND c_act = 1" ;
+    $sql1 = "SELECT c_id, c_name, c_email, c_pwd, c_phn, c_strt_name, c_strt_num, c_act FROM customer WHERE c_email = '$c_email' " ;
     $result = $conn->query($sql1) ;
 
     if($result){
       $res = $result->num_rows ;
       if( $res == 1){
          $row = $result->fetch_assoc() ;
-         $hash_pwd = $row["c_pwd"];
-         if(password_verify($c_pwd , $hash_pwd)){
-           session_start();
-           $_SESSION["c_loggedin"] = true;
-           $_SESSION["c_loggedin_id"] = $row["c_id"];
-           $_SESSION["c_loggedin_name"] = $row["c_name"];
-           $_SESSION["c_loggedin_email"] = $row["c_email"];
-           $_SESSION["c_loggedin_phn"] = $row["c_phn"];
-           header("location: 6_customer_home.php");
+         if($row['c_act']==0){
+            $c_uname_error .= "You have been banned by the owner.";
          }
          else{
-            //echo "<script> alert(\"Incorrect password.\"); </script> ";
-            $c_pw_error .= "Incorrect Password !";
+           $hash_pwd = $row["c_pwd"];
+           if(password_verify($c_pwd , $hash_pwd)){
+             session_start();
+             $_SESSION["c_loggedin"] = true;
+             $_SESSION["c_loggedin_id"] = $row["c_id"];
+             $_SESSION["c_loggedin_name"] = $row["c_name"];
+             $_SESSION["c_loggedin_email"] = $row["c_email"];
+             $_SESSION["c_loggedin_phn"] = $row["c_phn"];
+             $_SESSION["c_strt_num"] = $row["c_strt_num"];
+             $_SESSION["c_strt_name"] = $row["c_strt_name"];
+             $_SESSION["cart"] = "" ;
+             header("location: 6_customer_home.php");
+           }
+           else{
+              //echo "<script> alert(\"Incorrect password.\"); </script> ";
+              $c_pw_error .= "Incorrect Password !";
+           }
          }
+
       }
       else{
          //echo "<script> alert(\"No such customer.\"); </script> ";
@@ -72,14 +81,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $c_adrs = trim($_POST["c_adrs"]);
     $c_strt_num = trim($_POST["c_strt_num"]);
 
-    $sql = "SELECT c_id FROM customer WHERE c_email = '$c_email'  " ;
+    $sql = "SELECT c_id FROM customer WHERE c_email = '$c_email' OR c_phn = '$c_phn'  " ;
     $result = $conn->query($sql);
 
     if( $result ){
       $res = $result->num_rows ;
       if( $res > 0){
           // echo "<script> alert(\"User Already Exists with same email or phone number.\"); </script> ";
-          $c_sign_usr_err .=  "User Already Exists with same email.<br>";
+          $c_sign_usr_err .=  "User Already Exists with same email or phone number.<br>";
       }
     }
     else{
@@ -192,6 +201,7 @@ Password <br><label for="c_pwd">
 		<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancel_btn" > Cancel </button>
 	</form>
 </div>
+
 
 </body>
 </html>
