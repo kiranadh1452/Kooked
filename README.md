@@ -31,7 +31,7 @@ Admin Panel
 <b> MyOrders : </b> Manage your old orders - Confirm the orders which you received successfully. <br>
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/6%201%20Orders%20History.png?token=ALTQMAKJCDYDC6JFGFNFKMTAPP7XA)
 <br><br><br><br>
-<b> Employee Home Page :</b> <br>
+<b> Employee Pages :</b> <br>
 <p>
 <ul> 
   <li> Home (Display orders that were created but yet to be confirmed.) 
