@@ -45,7 +45,7 @@ Admin Panel
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/9%20Employee.png?token=ALTQMAPKWT4NRIL6XAYUPZDAPP7HG)
 <br><br>
 <b>Employee : Products Page View </b> <br>
-![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/7%20Employee.png?token=ALTQMANRAGVX4MSCUK52HRTAPP7G2)
+![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/7%20Employee.png)
 <br><br><br><br>
 Admin Section: You can change the default email id and password here. Note that Admin is the highest authority in this whole system.<br>
 
