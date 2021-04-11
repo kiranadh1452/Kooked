@@ -16,6 +16,6 @@ if($conn->connect_error){
 
 
 // while logging in, go to admin panel in the Employee login section -
-// default parameters are email:kiranadh1452@gmail.com and password: kiranadh
+// default parameters are email:kiranadh@admin.com and password: kiranadh
 // make sure to run all sql queries inside the "Database Creation and Designing" before trying to login to admin panel.
 ?>
