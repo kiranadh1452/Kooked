@@ -24,7 +24,7 @@ Employee Home Page - Employee Login | Admin Login <br>
 Admin = Owner <br>
 Employee accounts can only be created by Admin. 
 Default parameters for admin are:  <br>
-Email : kiranadh1452@gmail.com <br>
+Email : kiranadh@admin.com <br>
 Password: kiranadh <br>
 You can change these details after logging in as admin.
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/2%20Employee%20Login.png?token=ALTQMANQ5SIZZPW75XHBWB3APP5TA)
