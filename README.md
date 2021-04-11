@@ -53,7 +53,7 @@ Admin Panel
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/7%20Employee.png?token=ALTQMANRAGVX4MSCUK52HRTAPP7G2)
 <br><br><br><br>
 
-Admin Section: You can change the default email id and password here. Note that Admin is the highest authority in this whole system.<br>
+Admin Section: You can change the default email id and password under "Admin Settings". Note that Admin is the highest authority in this whole system.<br>
 Admin : Home(Add / Remove an employee)
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/99%20Admin%201.png)
 <br> <br>
