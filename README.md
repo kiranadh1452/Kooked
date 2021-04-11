@@ -4,9 +4,7 @@ Online Food Ordering System <br>
 Built Up From Scratch with no templates or particular frameworks.
 Raw HTML, JS, PHP. <br>
 Database : MySQL <br>
-Developed By : Kiran Adhikari <br>
-
-![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/8%20employee.png?token=ALTQMAJ5IXJ4647RXPJ76NLAPP7HA)
+Developed By : Kiran Adhikari <br><br>
 
 Customer Home Page - User Login | User Sign Up
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/1%20Customer.png?token=ALTQMAKIM655Z56RGKNBFVDAPP4ZQ)
@@ -40,7 +38,7 @@ Admin Panel
   <li> Completed (Display orders that were successfully delivered. ) </li>
   <li> Products (Display and alter the products : Add , Edit or Delete) </li> 
 </ul> <br>
-<b>Employee : Home Page View </b>
+<b>Employee : Home Page View </b> <br>
 ![image](https://raw.githubusercontent.com/kiranadh1452/Kooked/master/Kooked%20Images/8%20employee.png?token=ALTQMAJ5IXJ4647RXPJ76NLAPP7HA)
 <br><br>
 <b>Employee : Confirmed Page View </b>
